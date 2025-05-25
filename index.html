@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Dekho - Your Ultimate Streaming Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <div class="login-box" id="loginBox">
+            <h2>Welcome to Movie Dekho</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+        </div>
+
+        <div class="login-box" id="signupBox" style="display: none;">
+            <h2>Create Account</h2>
+            <form id="signupForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+        </div>
+    </div>
+
+    <div class="main-container" id="mainContainer" style="display: none;">
+        <nav class="navbar">
+            <div class="logo">Movie Dekho</div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <div class="dropdown">
+                    <a href="#audio" class="dropbtn">Audio</a>
+                    <div class="dropdown-content">
+                        <a href="#language">Language</a>
+                        <a href="#subtitle">Subtitle</a>
+                        <a href="#caption">Caption</a>
+                    </div>
+                </div>
+                <a href="#help">Help</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </div>
+        </nav>
+
+        <div class="hero-section">
+            <h1>Welcome to Movie Dekho</h1>
+            <p>Your Ultimate Streaming Experience</p>
+        </div>
+
+        <div class="streaming-platforms">
+            <div class="platform-card" id="netflix">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+                <h3>Netflix</h3>
+                <div class="content-types">
+                    <button class="movies-btn">Movies</button>
+                    <button class="series-btn">Web Series</button>
+                </div>
+            </div>
+
+            <div class="platform-card" id="hotstar">
+                <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202505/jiohotstar-launched-140046549-16x9.png?VersionId=RnAsdOOQOcHz.dvio3SqgmM1ESKCA135" alt="Hotstar">
+                <h3>Jio Hotstar</h3>
+                <div class="content-types">
+                    <button class="movies-btn">Movies</button>
+                    <button class="series-btn">Web Series</button>
+                </div>
+            </div>
+
+            <div class="platform-card" id="prime">
+                <img src="data:image/webp;base64,UklGRrwKAABXRUJQVlA4ILAKAABQQQCdASp1AeoAPp1OpU0lpKOiIpSYyLATiWNu4XRxkvn+mBHfnHx0f3bt8Nhdj82iw/4r+xb27UXlNeV/sn/Z8/nqU/Lf/Z/uXwBfq552HqR8xf7keq16Q/6x6LH+U63b0QPLj9pD91/Su1VDzXZu2eHZ3tbbtkN9kxLF/BTSrS7oa1Jyd0Nak5O6GtScndDWpOTuhrUnJ3Q1qTk7oa1Jyd0Nak5O6GtScndDWpOTuhrUnJ3Q1qTk7oa1Jyd0Nak5O50u6++pimLTp481Z2L9CvTbbVM8eNVmvUFgUQLMolOJUscA8n6tNm0udxy6vNLYsS+32bMPySpaXbXHo2KPqYTPG3g/b0XZiViI0jwKLKegMiOuGFi8hNiMiz28KKMd3nSqeeXPVvoIWZPmwrfkGO4SbyenFSd8ps2BJbIy5BmbjvXDhAjfigd9giGg76g97rwTmvhstXWI1xS8aDmW5HfuNe6cmD7G4RqSMRPqLAUSyIqe3gjZyRBollXYSHCcfbmM6vcXTkcGszSD3IR7XsQdJk0EOGtScued4eDhB6qv/Udf45pFehM8DtCRld1uJwW+OemIKub2eFTP+TKHDbpyd0NbzDmutDvij3hr/oo+4d+kWaYPomh+nUf4TxerkK+G3Tk7obd4vocndDWpOTuhrUnJ3Q1qTk7oa1Jyd0Nak5O6GtSoNunJ/6w0nONLKAAA/vBX/zdr8kvtz1Bf/bfX/bfX/bfX2BAAAAAAAAAAACc8LStyxWgdWuF5boPETLnwAS6FU36wgEqHYj5wz1zmAd2bVWb5ccaa6xlM8tyRuF41dnVgpqNVdSmtXaYSuEz3X2qL7JTxGztg+9WtD/9dyyOGBnqiIE9c3j+v58ihOlXGdE9dsk9nqLak9wrlZRek5AriJmisexXuROxIp8oWB0W5n35nm0VtPbt76mecXtEcFrs1aQvIUvjuUgnzjvjz5C8YB3yQReADfG/b92TDtBFY5RRHTwCRvdMai4WEv1dKHar3Mk0hXlX6HcBXUX30bffb9uviX1qKVeyKoBh74dIHHLYGouAudHhU3/tjOSxtoLhiduZL+9xW58/4ciTZb5D7kv7jN+sIe/28QidE3rbsd9ekddCwdWtvULLuuxN+S0DxvzhHR9QJQIR0zmCLxaWmcRo2Snv8eYn3PBV+54+0v6rSmLuKe+xPB+o2/ueRjopTivMOO7C/iSAPSmTm4nqYnB9DV82Tdi+s9+ETexFeSXLvRKbsQVe8Q1opMB53TSadHXRDJww8nHmNbr9un8I7LvpWz+ceRPANR0ALOCikTW4Df73vCXCElKr5xcqu7wxJ6Z5BIP/9fd1ancM1dSBFe2pZF+ZYBnqtkHPK6JWIuDUWhGEcyiqT2hrZ0NkUSgk87PfBAyeiyJrEs/5ryu3vJoySBkj8WgrGD2kc1jPkUwRr97c4aDdqaizgpFOIQ+yY28qVo1TW+5MaCPol3oUIk0dtT1jVwK4fGdXkZ/dIa2R1cMq1Itw8eTZimP71fGMGDwMzq71xL1YsU0luk49LPT/+wB80XjYKHNMnGFH2wfjOSad59t83Rj23jjCQ3ydsw+WljXKAvchWe+efRoIbRsJUnRwVrKafvQaQ6JGiEvR8bVlEFcuzksE9SbF0OwWEBrb1QltSMDgvH7Bdhz6QjQuFLbUgrkGN6FwEoP6YaiSEz+UrKX/AdLOfGRtSb/1JTiVbiMobekMxfRn8tG4V8vi9demhb9K69DBtN3hBEMieCliznlWuZIpP2S+cH2/s9jckHHT/AGS/tp0mdcs6NW2JMn1ob7f7xuWzDLycgZTBCJvRuENbs2hyNJU5hYK99lBnefS2KsWEzZCNrnX4nxeY5DvXpzen8JP4cBIz/rh78BMpjdC8bbMPLwsxEDKMfmZctgYCYqbMng1r4UIWcmwefBd8dooUT2jjndUgPrPmFcmTZf5LhQaOfJELpXH/VNVivoTbulukgVl9/RZ9/irxkeaz/H/qtALLPt0T0DuqMZEDNE2brZeeLGpFTtUsrKCOvoMcFMu4cKEWLZUslbNgbpvGLfcC20HiE1a98qrbScXDADMSm/vTwvroUMf76u+wI+5+5KQqgZLlhiDB1E1rdSEMJhCUkhdWcfg54onOFMsP96jObzm0Qf8vxAQhrgItH8EZH8e5LYKHXer3luT9QHODpO+uKsbXdRdBF7AMXF5I0tDkFZI8ZA4yxY3t04bI+fm0lz4gI8hpTWz7NSmwiOwf8pdGdN9sP+E4xqwMw9ihuNS3m2bfHcAnCfGuU7hywlP8SVyDb2f2K/sV01nE00CBqV3/yy8xfFeAWBqxz/sc5yj2QC0jPTzAou1JLaNQJ3HkZ9EOsd85teFnRll7nauM7Q2TPh1zNVep8LwGNraQE5tUsXyWwIM2cIGzGY9SPUuAyNyIxJKUb5605X9gC5cGoWaGl8ybc1TxXwDfwXPPwDmxYIRcN6Mj7HrIAT7FWW9lvr7TFmkSHFANRxDtyCr8TRyVrrHniLGrfwQQGn+2gn5JLCFolEv7te4Uh9R/62DuArCXDH9wkLFYtORRVkB+F5fs1qbFio7DqbcZ3pXR0+pAS8WBguc0gZBK7YcLy8yXhKMTiiiwu2iiJ8EscaUdsFMhfUzv4vV7PkSauSVeXbj5UGjgCI4jqI5DKxQTsHHeC9+132puIgbHv4nS8kT/4ksmQz8qYWXIOGIkr4POuWnGk4CmKzNdxxPfbbni1UVZVZpUBleE8+LeMI+4FpEXL2BL2+eY8eBYV8v/sLUm3JMisgeo9W62cFSYazVnfPHQgLPNH1tfHkdpINZevR2bixvg24p9dLLEX6Kt92VnXvNnrFYI5mfIKw8Wc9XSfgRu554vsOL8YIgWIGBtMMu+pOU/n96mX7mGCKXtyDtrRsAByv0wz9rlr88p0eSzJNOcSuGMRS+9/5wRtRiSWLve59x439iYZ/SL5pG/lkushgqPprQ2xeAwW8bYjfaE2BSZQHsf+i1nbcWOz7Vj6K0ZpIzockEFH8spds5WHaFdX9zykQb2qEMJtpUtiqp0buaxnr3+kWG2xW5Ca3LeWjI0CDYDwzImqXCC1yYQGeVOV8XDxoqJEj/bna56eak3qcXkDPupUCeisXfveNeXKz4Mwhn/P9ADAVfB5qTLdIMGaABmcRLp8mcFyg57g/lLTBZTSY1zlfh6V731mKzMHe9J/uKJe73SWNSSCaEUE0AzcxWARSv2VTIwDsKMnHqHNVGYwNGI5E6NT3AaUMhGu+17swB1lcMowX40Y4l0L7mh1cMJNwUT5SdJkRlN/OrmaBOfE4s9hvd4mzOQTAvJv9iNQUQ/6cxJbhek8THX6nOyTlNSOiSuZMR7xl4US43mfFZ2nw0JlbD+VaGWya9O95s/BGungLgQ2rlEN+qbkEox6bu0yfXXUmAPJdzkRUHAtokZM7S4Z2xzdUwxSaKQo1y+WI01AvQ0j4Be7KJxYAhdWCPDGxRa+OF6rTn+sxU8V9ubBByTDiWdlL8ZutvRyZnNjiti/4+oZ2EFNSrSGvoqlEcBD6fb9XXfBCbSp4GvpVWvBD96Y+Qc0f3fxVwAARgC7uSFnWAAAAQXPtzrfFUFoe6HqHghgGnYw8EMA07GHggwAAA=" alt="Prime">
+                <h3>Amazon Prime</h3>
+                <div class="content-types">
+                    <button class="movies-btn">Movies</button>
+                    <button class="series-btn">Web Series</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="contentSection" style="display: none;">
+            <h2 id="sectionTitle"></h2>
+            <div class="content-grid" id="contentGrid"></div>
+        </div>
+
+        <!-- Language and Caption Settings Section -->
+        <div class="settings-section" id="languageSettings" style="display: none;">
+            <div class="settings-container">
+                <h2>Language Settings</h2>
+                <div class="language-slider">
+                    <div class="language-option">
+                        <input type="radio" name="language" id="hindi" value="hindi">
+                        <label for="hindi">Hindi</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" name="language" id="english" value="english">
+                        <label for="english">English</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" name="language" id="turkish" value="turkish">
+                        <label for="turkish">Turkish</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" name="language" id="marathi" value="marathi">
+                        <label for="marathi">Marathi</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" name="language" id="spanish" value="spanish">
+                        <label for="spanish">Spanish</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" name="language" id="french" value="french">
+                        <label for="french">French</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-section" id="captionSettings" style="display: none;">
+            <div class="settings-container">
+                <h2>Caption Settings</h2>
+                <div class="language-slider">
+                    <div class="language-option">
+                        <input type="radio" name="caption" id="caption-hindi" value="hindi">
+                        <label for="caption-hindi">Hindi</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" name="caption" id="caption-english" value="english">
+                        <label for="caption-english">English</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" name="caption" id="caption-turkish" value="turkish">
+                        <label for="caption-turkish">Turkish</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" name="caption" id="caption-marathi" value="marathi">
+                        <label for="caption-marathi">Marathi</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" name="caption" id="caption-spanish" value="spanish">
+                        <label for="caption-spanish">Spanish</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="radio" name="caption" id="caption-french" value="french">
+                        <label for="caption-french">French</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Movie Dekho</h3>
+                <p>Your Ultimate Streaming Experience</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#language">Language</a></li>
+                    <li><a href="#help">Help</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Streaming Platforms</h4>
+                <ul>
+                    <li><a href="#netflix">Netflix</a></li>
+                    <li><a href="#hotstar">Jio Hotstar</a></li>
+                    <li><a href="#prime">Amazon Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> support@moviedekho.com</li>
+                    <li><i class="fas fa-phone"></i> +91 1234567890</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Movie Dekho. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
